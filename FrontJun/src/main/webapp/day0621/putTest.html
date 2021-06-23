@@ -10,7 +10,7 @@
 			<legend>선물하기</legend>
 			<p>주문자의 이름을 입력하세요</p>
 			<label for="orderer">주문자 : </label> <input type="text" name="orderer"
-				id="orderer" size="10">
+				id="orderer" size="10" placeholder="주문자">
 
 			<p>받는 분의 주소를 입력하세요</p>
 			<label for="address">주소 : </label> <input type="text" name="address"
@@ -18,14 +18,14 @@
 
 
 			<p>주문할 상품을 선택해주세요</p>
-			<input type="checkbox" id="gift1"> <label for="gift1">선물용
-				3kg</label> <input type="checkbox" id="gift2"> <label for="gift2">선물용
-				5kg</label> <input type="checkbox" id="home"> <label for="home">가정용
+			<input type="checkbox" name="gift" value="gift" id="gift1"> <label for="gift1">선물용
+				3kg</label> <input type="checkbox" name="gift" value="gift" id="gift2"> <label for="gift2">선물용
+				5kg</label> <input type="checkbox" name="gift" value="gift" id="home"> <label for="home">가정용
 				3kg</label>
 
 			<p>포장 선택</p>
-			<input type="radio" id="package"> <label for="package">선물
-				포장</label> <input type="radio" id="nonepackage"> <label
+			<input type="radio" name="package" value="package" id="package"> <label for="package">선물
+				포장</label> <input type="radio" name="package" value="package" id="nonepackage"> <label
 				for="nonepackage">선물 포장 안함</label>
 		</fieldset>
 	</form>
