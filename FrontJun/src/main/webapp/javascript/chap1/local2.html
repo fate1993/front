@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>new document</title>
+<SCRIPT>
+	var scope = "global";
+	function checkscope() {
+		scope = "local";
+		document.write(scope);
+		myscope = "mylocal";//var없이 선언된 변수는 전역변수가 된다.
+		document.write(myscope);
+	}
+	checkscope();
+	document.write(scope);
+	document.write(myscope);
+</SCRIPT>
+</head>
+
+<body>
+
+</body>
+</html>
