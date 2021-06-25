@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert</title>
+</head>
+<body>
+	<script>
+		function User(arg) {
+			this.name = arg; /* // 프로퍼티 정의
+			this.getName = function() {
+				return this.name;
+			}; // 메소드 정의
+			this.setName = function(value) {
+				this.name = value;
+			}; // 메소드 정의 */
+		}
+		User.prototype.getName=function() {return this.name;};
+		User.prototype.setName=function() {return this.value;};
+		
+		let me = new User('자바'); // 객체 생성
+		console.log(me.getName()); // 자바
+		me.setName('JavaScript');
+		console.log(me.getName()); // JavaScript
+		var me = new User('me');
+		var you = new User('you');
+	</script>
+</body>
+</html>
