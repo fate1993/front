@@ -1,0 +1,22 @@
+<html>
+<head>
+<script>
+	function checkText() {
+		if (document.myform.irum.value)
+			//if(document.myform.elements[0].value) 
+			alert("이름은 " + document.myform.elements[0].value + "입니다.")
+		else
+			alert("이름을 입력하지 않으셨습니다.")
+	}
+</script>
+</head>
+<body>
+	<form name="myform">
+		이름 : <input type="text" name="irum"> 
+		<input type="button" value="입력 확인" onClick="checkText()">
+	</form>
+</body>
+</html>
+
+</body>
+</html>

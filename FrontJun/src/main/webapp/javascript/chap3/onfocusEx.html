@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script >
+	function showMessage(input, str) {
+		input.nextSibling.innerHTML=str;
+	}
+	function noneMessage(input){
+		input.nextSibling.innerHTML ="";
+	}
+	
+</script></head>
+<body><form name="myform1">
+	�̸� : <input type="text" 
+	onFocus="showMessage(this, '�̸��� �Է��Ͻÿ�')"
+	onblur="noneMessage(this)"><span></span> <br>
+	���� : <input type="text" 
+	onFocus="showMessage(this, '���̸� �Է��Ͻÿ�')" onblur="noneMessage(this)"><span></span> <br>
+	�ּ� : <input type="text" 
+	onFocus="showMessage(this, '�ּҸ� �Է��Ͻÿ�')" onblur="noneMessage(this)"><span></span>
+</form></body>
+
+</html>
+
+

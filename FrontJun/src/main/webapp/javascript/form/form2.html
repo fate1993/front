@@ -1,0 +1,28 @@
+<html>
+<head>
+<script>
+	function checkText() {
+		var str
+		if (document.myform.elements[0].value != "") {
+			str = "이름은 " + document.myform.elements[0].value + "입니다.\n"
+			str += "데이타를 보냈습니다."
+			document.myform.method="get";
+			document.myform.submit();
+			alert(str)
+		} else
+			alert("이름을 입력하지 않아서 데이터를 보내지 않았습니다.")
+	}
+</script>
+</head>
+<body>
+	<H1>Form 예제</h1>
+	<br>
+	<form name="myform" action="save.html" method="post">
+		이름 : <input type="text" name="irum"> 
+		<input type="button" value="입력 확인 및 보내기" onClick="checkText()">
+	</form>
+</body>
+</html>
+
+</body>
+</html>
