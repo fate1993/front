@@ -15,51 +15,12 @@ function post() {
         }
     }).open();
 }
-function checkAll(){
-	// id 체크
-	let id = document.getElementById('id').value;
-	let idReg =  /^[A-Za-z0-9+]*$/;
 
-	if(!idReg.test(id)) {
-		alert('다시입력')
-		return false;
-		
-	} else {
-		return true;
-	}
-	// password 체크
-	let password = document.getElementById('password').value;
-	let passwordReg = /^[0-9]{7,16}$/g;
-	
-	if(!passwordReg(password)) {
-		return false;
-	} else {
-		return true;
-	}
-	// password 확인 체크
-	let password1 = document.getElementById('password').value;
-	let password2 = document.getElementById('password2').value;
-	
-	if(password1 != password2) {
-		return false;
-	} else {
-		return true;
-	}
-	// 사용자 이름 체크
-	
-	let username = document.getElementById('username').value;
-	
-	if(username) {
-		return true;
-	} else {
-		return false;
-	}
-}
 
 </script>
 </head>
-<body>
-<form action="#" name="userinput">
+<body onload="today()">
+<form action="#" name="userinput" onsubmit="return validate()">
   <center>
   <table width="700" border="1">
     <tr>
@@ -132,7 +93,7 @@ function checkAll(){
     </tr>
     <tr>
       <td colspan="2" align="center" >
-          <input type="submit" name="confirm" value="등   록" onclick="checkAll()" >
+          <input type="submit" name="confirm" value="등   록">
           <input type="reset" name="reset" value="다시입력">
           <input type="button" value="가입안함">
       </td>
@@ -140,5 +101,44 @@ function checkAll(){
   </table>
   </center>
 </form>
+<script>
+	function today(){
+		let t = new Date();
+		let str = t.getFullYear() + "-"
+		+ ("0" + (t.getMonth() + 1)).slice(-2) + "-"
+		+ t.getDate();
+		
+	document.userinput.birth.max = str;
+	}
+	function validate(){
+		let form = document.userinput;
+		// 아이디 한글 포함x 8글자 이상
+		if(form.id.value.length >= 8) {
+			var patt = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g;
+			var temp = patt.test(form.id.value);
+			if(temp) {
+				alert("id에 한글을 입력하지마요")
+				return false;
+			}
+		} else {
+			alert("아이디는 8글자 이상입니다")	// span 태그로 메시지 띄우는 방법이 더 좋음
+			return false;
+		}
+		
+		if(form.passwd.value.length < 8) {
+			alert("비밀번호는 8글자 이상입니다.")
+			return false;
+		}
+		if(form.passwd.value != form.passwd2.value) {
+			alert("비밀번호와 비밀번호 확인이 일치하지 않습니다")
+			return false;
+		}
+		if(!form.name.value) {
+			alert("이름은 무조건 입력해야 합니다")
+			 return false;
+		}
+		return true; // 기본값이 true라 안해도 되긴 함
+	}
+</script>
 </body>
 </html>

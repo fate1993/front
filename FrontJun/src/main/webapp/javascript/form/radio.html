@@ -1,10 +1,12 @@
 <html>
 <HEAD>
+<meta charset="utf-8">
 <SCRIPT>
 	function findSelected(form) {
 		for (var i = 0; i < form.drive.length; i++) {
+			console.log(form.drive[1]);
 			if (form.drive[i].checked == true) {
-				alert(form.drive[i].value + " ����̺갡 ���õǾ����ϴ�.")
+				alert(form.drive[i].value + "드라이브가 선택됐습니다")
 			}
 		}
 	}
@@ -12,14 +14,14 @@
 </HEAD>
 <BODY>
 	<FORM ACTION="nothingcgi">
-		<H1>����̺� ����</H1>
+		<H1>드라이브 선택</H1>
 		<P>
-			<INPUT TYPE="radio" NAME="drive" VALUE="A" CHECKED> A ����̺�<BR>
-			<INPUT TYPE="radio" NAME="drive" VALUE="B"> B ����̺�<BR> <INPUT
-				TYPE="radio" NAME="drive" VALUE="C"> C ����̺�<BR> <INPUT
-				TYPE="radio" NAME="drive" VALUE="D"> D ����̺�
+			<INPUT TYPE="radio" NAME="drive" VALUE="A" CHECKED> A 드라이브<BR>
+			<INPUT TYPE="radio" NAME="drive" VALUE="B"> B 드라이브<BR> 
+			<INPUT TYPE="radio" NAME="drive" VALUE="C"> C 드라이브<BR> 
+			<INPUT TYPE="radio" NAME="drive" VALUE="D"> D 드라이브
 		<P>
-			<INPUT TYPE="button" VALUE="Check" onClick="findSelected(this.form)">
+			<INPUT TYPE="button" VALUE="Check" onClick="findSelected(this.form)"> // this.form >> 이벤트가 발생한 태그를 감싸고 있는 form 태그
 	</FORM>
 </BODY>
 </html>

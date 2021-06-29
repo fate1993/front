@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 
+		<script type="text/javascript">
+			function chkBoxATB(source) {
+				if(document.cart.chkAll.checked){
+				checkboxes = document.getElementsByName('cartGoodsDel');
+				for(var i=0, n=checkboxes.length; i<n; i++)
+					checkboxes[i].checked = source.checked;
+					} else {
+						for(var i=0, n=checkboxes.length; i<n; i++)
+							checkboxes[i].checked = source.checked;
+					}
+			}
+		</script>
+		 -->
+		<script>
+		function chkBoxATB() {
+			let form = document.cart;
+			let chk = form.chkAll.checked;
+			let len = form.cartGoodsDel.legnth;
+			
+			for(let i = 0; i < len; i++) {
+				form.cartGoodsDel[i].checked = chk;
+			}
+		}
+		</script>
+	</head>	 
+	<body>
+		<form name="cart">
+			전체선택/해제 <input type="checkbox" name="chkAll" onclick="chkBoxATB()">
+			 <br><br>
+			 <p>추천 메뉴</p>
+			 <input name="cartGoodsDel" type="checkbox" >짜장면<br> 
+			 <input name="cartGoodsDel" type="checkbox" >짬뽕<br> 
+			 <input name="cartGoodsDel" type="checkbox" >라면<br > 
+			 <input name="cartGoodsDel" type="checkbox" >삼겹살<br> 
+			 <input name="cartGoodsDel" type="checkbox" >족발<br> 
+			 <input name="cartGoodsDel" type="checkbox" >냉면
+		</form> 
+	</body>
+</html>
