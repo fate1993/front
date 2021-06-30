@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	<title>sample1</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+		// ready function : body 태그가 모두 로딩되고 수행됨
+$(function(){
+	alert("test")
+	$("p#first").html("<strong>변경후</strong>");
+});
+		</script>
+	</head>
+	<body> 
+		<p id="first"> 변경전</p>
+	</body>
+</html>
