@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<script>
+	// 과일이름 출력
+	$(document).ready(function() {
+		$("button").click(function() {
+			$.getJSON("./data.jsp", function(result) {
+						      $("div").append(result + " ");
+			});
+		}); // click 
+	}); // ready
+</script>
+<button id="test">버튼</button>
+<div></div>
+</body>
+</html>
